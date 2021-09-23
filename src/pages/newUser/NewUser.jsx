@@ -36,7 +36,7 @@ export default function NewUser() {
         
         const d = new Date();
         const date = d.getDate();
-        const month = d.getMonth();
+        const month = d.getMonth()+1;
         const year = d.getFullYear();
         const paymentDate = year + "-" + month + "-" + date;
 
@@ -72,7 +72,7 @@ export default function NewUser() {
             <></>
         ):(
             <div className="newUser">
-            <h1 className="newUserTitle">Complain</h1>
+            <h1 className="newUserTitle">Warning</h1>
             <form id="form1" >
                 <div className="newUserForm">
                     <div className="newUserItem">    
@@ -98,8 +98,8 @@ export default function NewUser() {
                             onChange={e => setCategoty(e.target.value)}
                             >
                             <option value="Annual Payment">Annual Payment</option>
-                            <option value="Annual ">Annual Payment</option>
-                            <option value=" Payment">Annual Payment</option>
+                            <option value="Client Complaints">Client Complaints</option>
+                            <option value="StartUp fault">StartUp fault</option>
                         </select>
                     </div>
                 </div>

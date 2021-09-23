@@ -126,6 +126,12 @@ export default function StartupUsers() {
 
     const updateban = () =>{
 
+        const d = new Date();
+        const date = d.getDate();
+        const month = d.getMonth()+1;
+        const year = d.getFullYear();
+        const paymentDate = year + "-" + month + "-" + date;
+
       fetch("http://localhost:3008/company/ban/"+userId, {
         method: "PATCH",
         // mode: 'no-cors',
@@ -134,6 +140,24 @@ export default function StartupUsers() {
             account_status: "banned",
         }),
       });
+
+      fetch( "http://localhost:3008/admincomplain/", {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            // Service_name,
+            // Service_type,
+            // picture,
+            // unitprice,
+            // quantity,
+            placed_date:paymentDate,
+            complian_Category:"banned",
+            type:"warning",
+            description:"banned",
+            br_number:userId,
+            // company_category,
+          }),
+        })
         
       if(data.type === "product"){
         fetch("http://localhost:3008/product/ban/"+userId, {
@@ -158,12 +182,37 @@ export default function StartupUsers() {
 
     const updateactive = () =>{
 
+        const d = new Date();
+        const date = d.getDate();
+        const month = d.getMonth()+1;
+        const year = d.getFullYear();
+        const paymentDate = year + "-" + month + "-" + date;
+
         fetch("http://localhost:3008/company/ban/"+userId, {
           method: "PATCH",
           // mode: 'no-cors',
           headers: { "Content-Type": "application/json",'Access-Control-Allow-Origin': '*' },
           body: JSON.stringify({
               account_status: "active",
+          }),
+
+        });
+
+        fetch( "http://localhost:3008/admincomplain/", {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            // Service_name,
+            // Service_type,
+            // picture,
+            // unitprice,
+            // quantity,
+            placed_date:paymentDate,
+            complian_Category:"Active",
+            type:"warning",
+            description:"Active",
+            br_number:userId,
+            // company_category,
           }),
         });
           
@@ -188,6 +237,7 @@ export default function StartupUsers() {
         console.log("BAN");
       }
 
+
     useEffect (() => {
         getData();
     
@@ -211,7 +261,7 @@ export default function StartupUsers() {
         },
         {
             field: "type",
-            headerName: "Warning",
+            headerName: "Warning type",
             width: 150,
          
         },
@@ -231,6 +281,7 @@ export default function StartupUsers() {
             field: "description",
             headerName: "Description",
             width: 200,
+            editable: true,
           
         },
         
@@ -302,7 +353,7 @@ export default function StartupUsers() {
           field: 'name',
           headerName: 'User Name',
           width: 200,
-          editable: true,
+        //   editable: true,
           renderCell:(params)=>{
               return(
                   <div className="userListUser">

@@ -73,11 +73,11 @@ export default function OtherUsers() {
       }, []);
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 60 },
+        { field: 'id', headerName: 'ID', width: 100 },
         {
           field: 'cName',
           headerName: 'Company Name',
-          width: 150,
+          width: 200,
        
           renderCell:(params)=>{
               return(
@@ -113,14 +113,14 @@ export default function OtherUsers() {
         {
             field: 'email',
             headerName: 'Email Address',
-            width: 200,
+            width: 180,
         },
         
 
       ];
 
       const columns1 = [
-        { field: 'id', headerName: 'ID', width: 60 },
+        { field: 'id', headerName: 'ID', width: 100 },
         {
           field: 'name',
           headerName: 'User Name',
@@ -138,7 +138,7 @@ export default function OtherUsers() {
         {
             field: 'email',
             headerName: 'Email Address',
-            width: 150,
+            width: 200,
         },
         {
             field: 'accountType',
