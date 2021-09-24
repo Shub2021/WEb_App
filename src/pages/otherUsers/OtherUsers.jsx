@@ -22,7 +22,7 @@ export default function OtherUsers() {
             window.location.assign("/")
           }else{
         
-        fetch("http://localhost:3008/investor")
+        fetch("https://startuphub2021.herokuapp.com/investor")
         .then((res) => res.json())
         .then((result) => {
             for(let i=0; i<result.length;i++){
@@ -43,7 +43,7 @@ export default function OtherUsers() {
 
         });
         let userarray1 = [];
-        fetch("http://localhost:3008/client")
+        fetch("https://startuphub2021.herokuapp.com/client")
         .then((res) => res.json())
         .then((result) => {
             for(let i=0; i<result.length;i++){

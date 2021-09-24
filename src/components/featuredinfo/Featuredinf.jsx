@@ -11,19 +11,19 @@ export default function Featuredinf() {
     const getData = ()=>{
       
         
-        fetch("http://localhost:3008/investor")
+        fetch("https://startuphub2021.herokuapp.com/investor")
         .then((res) => res.json())
         .then((result) => {
             setData(result.length);
         });
        
-        fetch("http://localhost:3008/client")
+        fetch("https://startuphub2021.herokuapp.com/client")
         .then((res) => res.json())
         .then((result) => {    
             setData1(result.length);
         });
 
-        fetch("http://localhost:3008/company")
+        fetch("https://startuphub2021.herokuapp.com/company")
         .then((res) => res.json())
         .then((result) => {    
             setData2(result.length);
@@ -40,33 +40,33 @@ export default function Featuredinf() {
             <div className="featuredItem">
                 <span className="featuredTitle">Client Users</span>
                 <div className="featuredMoneyContainer">
-                    <span className="featuredMoney">{data1+1000}</span>
-                    <span className="featuredMoneyRate">+{data1+200}
+                    <span className="featuredMoney">{data1-data}</span>
+                    {/* <span className="featuredMoneyRate">+{data1}
                         <ArrowUpward className="featuredIcon "/>
-                        {/* <ArrowDownward className="featuredIcon negetive"/> */}
-                    </span>
+                        
+                    </span> */}
                 </div>
-                <span className="featuredSub">Conpared to last month</span>
+                {/* <span className="featuredSub">Conpared to last month</span> */}
             </div>
             <div className="featuredItem">
                 <span className="featuredTitle">StartUp Users</span>
                 <div className="featuredMoneyContainer">
-                    <span className="featuredMoney">{data2+1250}</span>
-                    <span className="featuredMoneyRate">+{data2+150}
+                    <span className="featuredMoney">{data2}</span>
+                    {/* <span className="featuredMoneyRate">+{data2}
                         <ArrowUpward className="featuredIcon "/>
-                    </span>
+                    </span> */}
                 </div>
-                <span className="featuredSub">Conpared to last month</span>
+                {/* <span className="featuredSub">Conpared to last month</span> */}
             </div>
             <div className="featuredItem">
                 <span className="featuredTitle">Investor Users</span>
                 <div className="featuredMoneyContainer">
-                    <span className="featuredMoney">{data+580}</span>
-                    <span className="featuredMoneyRate">+{data+30}
+                    <span className="featuredMoney">{data}</span>
+                    {/* <span className="featuredMoneyRate">+{data}
                         <ArrowUpward className="featuredIcon "/>
-                    </span>
+                    </span> */}
                 </div>
-                <span className="featuredSub">Conpared to last month</span>
+                {/* <span className="featuredSub">Conpared to last month</span> */}
             </div>
         </div>
     )

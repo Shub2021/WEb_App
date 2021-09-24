@@ -18,7 +18,7 @@ export default function WidgetLg() {
      const Month = (date.getMonth()+1);
 
     const getData = ()=>{
-        fetch("http://localhost:3008/annualfee/")
+        fetch("https://startuphub2021.herokuapp.com/annualfee/")
         .then((res) => res.json())
         .then((result) => {
         for(let i=0; i<result.length;i++){
@@ -44,7 +44,7 @@ export default function WidgetLg() {
       });
 
 
-      fetch("http://localhost:3008/company")
+      fetch("https://startuphub2021.herokuapp.com/company")
         .then((res) => res.json())
         .then((result) => {
         

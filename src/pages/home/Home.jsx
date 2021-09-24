@@ -76,7 +76,7 @@ export default function Home() {
           window.location.assign("/")
         }else{  
           
-        fetch("http://localhost:3008/company")
+        fetch("https://startuphub2021.herokuapp.com/company")
           .then((res) => res.json())
           .then((result) => {
           

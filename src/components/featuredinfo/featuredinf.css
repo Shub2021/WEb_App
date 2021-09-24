@@ -9,13 +9,13 @@
     margin: 0px 20px;
     padding: 30px;
     border-radius:10px;
-    cursor: pointer;
+    /* cursor: pointer; */
     -webkit-box-shadow: -1px 0px 13px -4px #000000; 
     box-shadow: -1px 0px 13px -4px #000000;
 }
 
 .featuredTitle{
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .featuredMoneyContainer{

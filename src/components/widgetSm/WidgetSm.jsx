@@ -12,7 +12,7 @@ export default function WidgetSm() {
 
     const getData = ()=>{
         
-        fetch("http://localhost:3008/complaint/")
+        fetch("https://startuphub2021.herokuapp.com/complaint/")
         .then((res) => res.json())
         .then((result) => {
             for(let i=0; i<result.length;i++){

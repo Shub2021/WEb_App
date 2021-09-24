@@ -17,7 +17,7 @@ export default function Login({Logininfo, error}) {
 
         const logginSubmit= () =>{
 
-            fetch("http://localhost:3008/admin/login", {
+            fetch("https://startuphub2021.herokuapp.com/admin/login", {
                 method: "post",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

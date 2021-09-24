@@ -33,7 +33,7 @@ export default function StartupUsers() {
           window.location.assign("/")
         }else{  
 
-        fetch("http://localhost:3008/company/"+userId)
+        fetch("https://startuphub2021.herokuapp.com/company/"+userId)
         .then((res) => res.json())
         .then((result) => {
         
@@ -42,7 +42,7 @@ export default function StartupUsers() {
         // console.log(result);
       });
 
-      fetch("http://localhost:3008/users/br/"+userId)
+      fetch("https://startuphub2021.herokuapp.com/users/br/"+userId)
         .then((res) => res.json())
         .then((result) => {
         let userarray = [];
@@ -63,7 +63,7 @@ export default function StartupUsers() {
         // console.log(result);
       });
 
-      fetch("http://localhost:3008/annualfee/"+userId)
+      fetch("https://startuphub2021.herokuapp.com/annualfee/"+userId)
         .then((res) => res.json())
         .then((result) => {
         let userarray2 = [];
@@ -82,7 +82,7 @@ export default function StartupUsers() {
         // console.log(userarray2);
       });
 
-      fetch("http://localhost:3008/complaint/br/"+userId)
+      fetch("https://startuphub2021.herokuapp.com/complaint/br/"+userId)
         .then((res) => res.json())
         .then((result) => {
         let userarray3 = [];
@@ -101,7 +101,7 @@ export default function StartupUsers() {
         // console.log(result);
       });
 
-      fetch("http://localhost:3008/admincomplain/br/"+userId)
+      fetch("https://startuphub2021.herokuapp.com/admincomplaint/br/"+userId)
         .then((res) => res.json())
         .then((result) => {
         let userarray4 = [];
@@ -132,7 +132,7 @@ export default function StartupUsers() {
         const year = d.getFullYear();
         const paymentDate = year + "-" + month + "-" + date;
 
-      fetch("http://localhost:3008/company/ban/"+userId, {
+      fetch("https://startuphub2021.herokuapp.com/company/ban/"+userId, {
         method: "PATCH",
         // mode: 'no-cors',
         headers: { "Content-Type": "application/json",'Access-Control-Allow-Origin': '*' },
@@ -141,7 +141,7 @@ export default function StartupUsers() {
         }),
       });
 
-      fetch( "http://localhost:3008/admincomplain/", {
+      fetch( "https://startuphub2021.herokuapp.com/admincomplaint/", {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -160,7 +160,7 @@ export default function StartupUsers() {
         })
         
       if(data.type === "product"){
-        fetch("http://localhost:3008/product/ban/"+userId, {
+        fetch("https://startuphub2021.herokuapp.com/product/ban/"+userId, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -168,7 +168,7 @@ export default function StartupUsers() {
             }),
       });
       }else{
-        fetch("http://localhost:3008/service/ban/"+userId, {
+        fetch("https://startuphub2021.herokuapp.com/service/ban/"+userId, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -188,7 +188,7 @@ export default function StartupUsers() {
         const year = d.getFullYear();
         const paymentDate = year + "-" + month + "-" + date;
 
-        fetch("http://localhost:3008/company/ban/"+userId, {
+        fetch("https://startuphub2021.herokuapp.com/company/ban/"+userId, {
           method: "PATCH",
           // mode: 'no-cors',
           headers: { "Content-Type": "application/json",'Access-Control-Allow-Origin': '*' },
@@ -198,7 +198,7 @@ export default function StartupUsers() {
 
         });
 
-        fetch( "http://localhost:3008/admincomplain/", {
+        fetch( "https://startuphub2021.herokuapp.com/admincomplaint/", {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -217,7 +217,7 @@ export default function StartupUsers() {
         });
           
         if(data.type === "product"){
-          fetch("http://localhost:3008/product/ban/"+userId, {
+          fetch("https://startuphub2021.herokuapp.com/product/ban/"+userId, {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -225,7 +225,7 @@ export default function StartupUsers() {
               }),
         });
         }else{
-          fetch("http://localhost:3008/service/ban/"+userId, {
+          fetch("https://startuphub2021.herokuapp.com/service/ban/"+userId, {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({

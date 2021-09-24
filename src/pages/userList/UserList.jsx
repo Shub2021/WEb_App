@@ -25,7 +25,7 @@ export default function UserList() {
         }else{
 
         let userarray = []
-        fetch("http://localhost:3008/company")
+        fetch("https://startuphub2021.herokuapp.com/company")
         .then((res) => res.json())
         .then((result) => {
         

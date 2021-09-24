@@ -41,7 +41,7 @@ export default function NewUser() {
         const paymentDate = year + "-" + month + "-" + date;
 
     
-        fetch( "http://localhost:3008/admincomplain/", {
+        fetch( "https://startuphub2021.herokuapp.com/admincomplaint/", {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
